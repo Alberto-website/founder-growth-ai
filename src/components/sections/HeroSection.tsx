@@ -100,12 +100,6 @@ export const HeroSection = () => {
             Scale to{" "}
             <span className="relative inline-block">
               <span className="text-gradient-animated">€15K/month</span>
-              <motion.span
-                className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-brand-blue via-brand-purple to-brand-cyan rounded-full"
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-              />
             </span>
             <br />
             <span className="text-foreground/90">with strategic mentoring</span>

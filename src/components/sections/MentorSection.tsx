@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Quote, Globe, Briefcase, GraduationCap, Heart } from "lucide-react";
+import albertoImage from "@/assets/alberto.png";
 
 const timeline = [
   {
@@ -82,9 +83,14 @@ export const MentorSection = () => {
               viewport={{ once: true }}
             >
               <div className="glass rounded-2xl p-8">
-                {/* Placeholder for photo */}
-                <div className="w-full aspect-square max-w-sm mx-auto rounded-xl bg-gradient-to-br from-primary/20 to-brand-indigo/20 mb-6 flex items-center justify-center">
-                  <span className="text-6xl">👨‍💼</span>
+                {/* Alberto's photo */}
+                <div className="w-full aspect-square max-w-sm mx-auto rounded-xl overflow-hidden mb-6 relative group">
+                  <img 
+                    src={albertoImage} 
+                    alt="Alberto Delli Carri - Business Mentor & Strategist" 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
                 </div>
 
                 <div className="text-center">
