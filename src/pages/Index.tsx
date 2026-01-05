@@ -10,6 +10,7 @@ import { FeaturesSection } from "@/components/sections/FeaturesSection";
 import { PricingSection } from "@/components/sections/PricingSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { FooterSection } from "@/components/sections/FooterSection";
+import { Chatbot } from "@/components/Chatbot";
 
 const Index = () => {
   return (
@@ -28,6 +29,7 @@ const Index = () => {
         <FAQSection />
       </main>
       <FooterSection />
+      <Chatbot />
     </div>
   );
 };

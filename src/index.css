@@ -76,7 +76,7 @@
   }
 
   .light {
-    --background: 0 0% 100%;
+    --background: 220 20% 98%;
     --foreground: 230 25% 11%;
     
     --card: 0 0% 100%;
@@ -88,21 +88,47 @@
     --primary: 220 90% 50%;
     --primary-foreground: 210 40% 98%;
     
-    --secondary: 210 40% 96%;
+    --secondary: 220 20% 94%;
     --secondary-foreground: 230 25% 11%;
     
-    --muted: 210 40% 96%;
-    --muted-foreground: 220 15% 47%;
+    --muted: 220 15% 92%;
+    --muted-foreground: 220 15% 40%;
     
-    --accent: 210 40% 96%;
-    --accent-foreground: 230 25% 11%;
+    --accent: 260 80% 55%;
+    --accent-foreground: 210 40% 98%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
     
-    --border: 220 25% 91%;
-    --input: 220 25% 91%;
+    --border: 220 20% 88%;
+    --input: 220 20% 90%;
     --ring: 220 90% 50%;
+    
+    /* Brand colors for light mode */
+    --brand-blue: 220 90% 50%;
+    --brand-blue-light: 215 95% 55%;
+    --brand-blue-dark: 225 85% 40%;
+    --brand-indigo: 245 85% 55%;
+    --brand-purple: 275 80% 50%;
+    --brand-cyan: 190 90% 40%;
+    
+    /* Glow Colors - lighter for day mode */
+    --glow-blue: 220 90% 50%;
+    --glow-purple: 275 80% 50%;
+    --glow-cyan: 190 90% 40%;
+    
+    /* Gradients for light mode */
+    --gradient-primary: linear-gradient(135deg, hsl(220, 90%, 50%) 0%, hsl(260, 80%, 55%) 50%, hsl(275, 80%, 50%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(220, 20%, 98%) 0%, hsl(220, 25%, 95%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%) 0%, hsl(220, 20%, 98%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(220, 90%, 50%, 0.1) 0%, hsl(260, 80%, 55%, 0.05) 40%, transparent 70%);
+    --gradient-mesh: radial-gradient(at 40% 20%, hsl(220, 90%, 50%, 0.08) 0px, transparent 50%), radial-gradient(at 80% 0%, hsl(275, 80%, 50%, 0.06) 0px, transparent 50%), radial-gradient(at 0% 50%, hsl(190, 90%, 40%, 0.05) 0px, transparent 50%);
+    
+    /* Shadows for light mode */
+    --shadow-glow: 0 0 40px hsl(220, 90%, 50%, 0.15);
+    --shadow-glow-lg: 0 0 60px hsl(220, 90%, 50%, 0.2);
+    --shadow-card: 0 4px 24px hsl(220, 25%, 75%, 0.25);
+    --shadow-elevated: 0 20px 60px hsl(220, 25%, 75%, 0.3);
   }
 }
 

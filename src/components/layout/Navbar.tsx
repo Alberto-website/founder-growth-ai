@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navLinks = [
   { label: "Program", href: "#program" },
@@ -71,8 +72,9 @@ export const Navbar = () => {
               ))}
             </nav>
 
-            {/* Desktop CTA */}
-            <div className="hidden md:block">
+            {/* Desktop CTA + Theme Toggle */}
+            <div className="hidden md:flex items-center gap-3">
+              <ThemeToggle />
               <Button 
                 onClick={openCalendly}
                 className="gradient-primary text-white font-semibold rounded-xl shadow-glow hover:shadow-glow-lg transition-all duration-500 group"
