@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Target, TrendingUp, Settings, Rocket, ChevronRight } from "lucide-react";
+import { Target, TrendingUp, Settings, Rocket, ChevronRight, ArrowRight } from "lucide-react";
 
 const pillars = [
   {
@@ -49,14 +49,29 @@ const pillars = [
   },
 ];
 
-const sessions = [
-  { number: 1, title: "Discovery & Assessment", focus: "Map your current state and define success" },
-  { number: 2, title: "Strategic Foundation", focus: "Lock in your direction and positioning" },
-  { number: 3, title: "Revenue Architecture", focus: "Design your path to €15K/month" },
-  { number: 4, title: "Systems & Leverage", focus: "Build the infrastructure for growth" },
-  { number: 5, title: "Execution Sprint", focus: "Implement and iterate rapidly" },
-  { number: 6, title: "Scale & Sustain", focus: "Lock in gains and plan what's next" },
-];
+const journey = {
+  before: {
+    title: "Before",
+    items: ["Confusion about what to focus on", "Revenue feels stuck", "Working in the business, not on it"],
+    color: "from-red-500/20 to-red-500/5",
+    borderColor: "border-red-500/30",
+    textColor: "text-red-400",
+  },
+  during: {
+    title: "During",
+    items: ["6 focused strategy sessions", "Clear direction at every step", "Practical decisions, not theory"],
+    color: "from-primary/20 to-primary/5",
+    borderColor: "border-primary/30",
+    textColor: "text-primary",
+  },
+  after: {
+    title: "After",
+    items: ["Confidence in your next moves", "A business that feels lighter", "Sustainable path to €15K+/month"],
+    color: "from-emerald-500/20 to-emerald-500/5",
+    borderColor: "border-emerald-500/30",
+    textColor: "text-emerald-400",
+  },
+};
 
 export const ProgramSection = () => {
   const [activePillar, setActivePillar] = useState<string>("direction");
@@ -82,8 +97,49 @@ export const ProgramSection = () => {
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             A focused 6-session sprint to optimize and scale your business to €15K/month.
-            Structured. Strategic. Anti-hustle.
+            <br />
+            <span className="text-foreground font-medium">Structured. Strategic. Anti-hustle.</span>
           </p>
+        </motion.div>
+
+        {/* Before → During → After Journey */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-5xl mx-auto mb-20"
+        >
+          <h3 className="text-xl font-semibold text-center mb-8">The Transformation Journey</h3>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            {Object.entries(journey).map(([key, phase], index) => (
+              <motion.div
+                key={key}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.15 }}
+                className={`relative rounded-xl p-6 bg-gradient-to-b ${phase.color} border ${phase.borderColor}`}
+              >
+                <h4 className={`text-lg font-bold mb-4 ${phase.textColor}`}>{phase.title}</h4>
+                <ul className="space-y-3">
+                  {phase.items.map((item, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <ChevronRight className={`w-4 h-4 mt-0.5 flex-shrink-0 ${phase.textColor}`} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                
+                {/* Arrow between cards */}
+                {index < 2 && (
+                  <div className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 z-10">
+                    <ArrowRight className="w-6 h-6 text-muted-foreground/50" />
+                  </div>
+                )}
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
 
         {/* 4 Pillars */}
@@ -140,48 +196,6 @@ export const ProgramSection = () => {
               </div>
             </motion.div>
           )}
-        </div>
-
-        {/* Session Timeline */}
-        <div className="max-w-4xl mx-auto">
-          <h3 className="text-xl font-semibold text-center mb-8">6 Sessions, 6 Weeks, Complete Transformation</h3>
-          
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border" />
-            
-            <div className="space-y-8">
-              {sessions.map((session, index) => (
-                <motion.div
-                  key={session.number}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className={`relative flex items-center gap-8 ${
-                    index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                  }`}
-                >
-                  {/* Session number */}
-                  <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm z-10">
-                    {session.number}
-                  </div>
-                  
-                  {/* Content */}
-                  <div className={`ml-16 md:ml-0 md:w-1/2 ${
-                    index % 2 === 0 ? "md:pr-16 md:text-right" : "md:pl-16"
-                  }`}>
-                    <div className="glass rounded-xl p-6">
-                      <h4 className="font-semibold mb-1">{session.title}</h4>
-                      <p className="text-sm text-muted-foreground">{session.focus}</p>
-                    </div>
-                  </div>
-                  
-                  <div className="hidden md:block md:w-1/2" />
-                </motion.div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>

@@ -29,7 +29,7 @@ const Index = () => {
         <FAQSection />
       </main>
       <FooterSection />
-      <Chatbot />
+      <Chatbot webhookUrl="https://joteh59565mucatecom.app.n8n.cloud/webhook/ffcf29b6-19e9-40fd-81a6-132910560043/chat" />
     </div>
   );
 };

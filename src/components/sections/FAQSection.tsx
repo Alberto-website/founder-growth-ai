@@ -8,7 +8,19 @@ import {
 
 const faqs = [
   {
-    question: "How is this different from other business coaching?",
+    question: "What if I don't see results?",
+    answer: "I offer a value guarantee: if after our first session you don't see the value, I'll refund you in full. I've never had to use it, but it's there for your peace of mind. That said, results require your commitment to implementation—this isn't magic, it's strategic work.",
+  },
+  {
+    question: "What if I'm too busy right now?",
+    answer: "Honestly? Being 'too busy' is often part of the problem this sprint solves. The 6 sessions are 60 minutes each, spread over 6-8 weeks. Between sessions, expect 2-4 hours per week implementing. If you genuinely can't commit that, now might not be the right time—and that's okay.",
+  },
+  {
+    question: "What if my business is different?",
+    answer: "I've worked with freelancers, consultants, agency owners, digital product creators, and service business owners across dozens of industries. The frameworks are adaptable because they focus on fundamentals: clarity, pricing, leverage, and execution. During the discovery call, we'll assess whether your situation fits.",
+  },
+  {
+    question: "How is this different from other coaching?",
     answer: "Most coaching is either too generic (cookie-cutter frameworks) or too vague (just 'accountability calls'). Break the Ceiling is a structured sprint with clear outcomes. Every session has a purpose, and you leave with concrete deliverables—not just motivation.",
   },
   {
@@ -20,24 +32,12 @@ const faqs = [
     answer: "The 6 sessions are 60 minutes each, spread over 6-8 weeks. Between sessions, expect to spend 2-4 hours per week implementing what we discuss. This isn't passive learning—it's active transformation.",
   },
   {
-    question: "What industries do you work with?",
-    answer: "I work with solo founders, freelancers, and small business owners across service-based and digital businesses. If you're selling expertise, consulting, creative services, or digital products—we're likely a good fit.",
-  },
-  {
     question: "What happens after the 6 sessions?",
     answer: "You'll have a complete strategic foundation, systems, and 60-day action plan to continue executing. Many clients continue with monthly check-ins, but the sprint is designed to make you self-sufficient.",
   },
   {
     question: "Do you offer payment plans?",
     answer: "Yes, we can discuss payment options during the discovery call if needed. My goal is to remove financial barriers for founders who are serious about growth.",
-  },
-  {
-    question: "What if it doesn't work for me?",
-    answer: "I offer a value guarantee: if after our first session you don't see the value, I'll refund you in full. I've never had to use it, but it's there for your peace of mind.",
-  },
-  {
-    question: "Can you just do the work for me?",
-    answer: "No—and that's intentional. Done-for-you creates dependency. My job is to give you the clarity, strategy, and systems so you can grow independently. I'm a mentor, not an employee.",
   },
 ];
 
@@ -59,7 +59,7 @@ export const FAQSection = () => {
             <span className="text-gradient">Answered.</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Honest answers to the questions founders ask most.
+            Honest answers to the real questions founders ask.
           </p>
         </motion.div>
 
@@ -79,7 +79,7 @@ export const FAQSection = () => {
                 <AccordionTrigger className="text-left hover:no-underline py-6">
                   <span className="font-medium">{faq.question}</span>
                 </AccordionTrigger>
-                <AccordionContent className="pb-6 text-muted-foreground">
+                <AccordionContent className="pb-6 text-muted-foreground leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

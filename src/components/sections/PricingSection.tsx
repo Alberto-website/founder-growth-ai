@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Check, X, ArrowRight, Shield, Clock, Sparkles } from "lucide-react";
+import { Check, X, ArrowRight, Shield, Clock, Sparkles, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const included = [
@@ -38,9 +38,14 @@ const guarantees = [
   },
 ];
 
+const paymentFlow = [
+  { step: 1, label: "Confirmation email" },
+  { step: 2, label: "Schedule your sessions" },
+  { step: 3, label: "First clarity session" },
+];
+
 export const PricingSection = () => {
   const openCalendly = () => {
-    // This will open Calendly - user needs to add their link
     window.open("https://calendly.com", "_blank");
   };
 
@@ -85,7 +90,7 @@ export const PricingSection = () => {
                       6 sessions to optimize and scale your business
                     </p>
                     
-                    <div className="mb-8">
+                    <div className="mb-6">
                       <div className="flex items-baseline gap-2">
                         <span className="text-5xl md:text-6xl font-bold">€1,250</span>
                         <span className="text-muted-foreground">one-time</span>
@@ -95,18 +100,43 @@ export const PricingSection = () => {
                       </p>
                     </div>
 
+                    {/* Reassurance line */}
+                    <p className="text-sm text-foreground/80 mb-6 p-3 rounded-lg bg-secondary/30">
+                      You'll know within the first sessions whether this sprint is paying off.
+                    </p>
+
                     <Button 
                       size="lg"
                       onClick={openCalendly}
                       className="w-full gradient-primary text-foreground font-semibold py-6 text-lg shadow-glow hover:shadow-elevated transition-all duration-300 mb-4"
                     >
-                      Book Your Free Call
+                      See If This Is Right for You
                       <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
                     
-                    <p className="text-xs text-muted-foreground text-center">
-                      No payment required for the discovery call
+                    <p className="text-xs text-muted-foreground text-center mb-6">
+                      No pressure. If it's not a fit, I'll tell you.
                     </p>
+
+                    {/* What happens after payment flow */}
+                    <div className="p-4 rounded-lg bg-secondary/30">
+                      <p className="text-xs font-medium text-muted-foreground mb-3">What happens after payment?</p>
+                      <div className="flex items-center justify-between">
+                        {paymentFlow.map((item, index) => (
+                          <div key={item.step} className="flex items-center">
+                            <div className="flex flex-col items-center">
+                              <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-xs font-medium text-primary">
+                                {item.step}
+                              </div>
+                              <span className="text-xs text-muted-foreground mt-1 text-center max-w-[80px]">{item.label}</span>
+                            </div>
+                            {index < paymentFlow.length - 1 && (
+                              <ArrowRight className="w-4 h-4 text-muted-foreground/50 mx-2" />
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
 
                   {/* Right: What's included */}
