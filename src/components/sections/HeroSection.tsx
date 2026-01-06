@@ -90,31 +90,39 @@ export const HeroSection = () => {
             <Sparkles className="w-4 h-4 text-brand-blue" />
           </motion.div>
 
-          {/* Main headline with gradient text */}
+          {/* Main headline - More explicit */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-bold leading-[1.1] mb-8 tracking-tight"
+            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-bold leading-[1.1] mb-6 tracking-tight"
           >
-            Scale to{" "}
-            <span className="relative inline-block">
-              <span className="text-gradient-animated">€15K/month</span>
-            </span>
+            Break Through Your
             <br />
-            <span className="text-foreground/90">with strategic mentoring</span>
+            <span className="relative inline-block">
+              <span className="text-gradient-animated">Revenue Ceiling</span>
+            </span>
           </motion.h1>
 
-          {/* Subheadline */}
+          {/* Who is this for sub-line */}
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="text-lg md:text-xl text-foreground/80 mb-4 max-w-3xl mx-auto font-medium"
+          >
+            For solo founders and small business owners stuck between €5K–€15K/month
+            who want clarity, not chaos.
+          </motion.p>
+
+          {/* Outcome statement */}
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed font-light"
           >
-            For ambitious solo founders and small business owners who want to 
-            <span className="text-foreground font-medium"> increase revenue</span> and 
-            <span className="text-foreground font-medium"> improve margins</span>—without working more hours.
+            More clarity. Better decisions. Sustainable growth.
           </motion.p>
 
           {/* Interactive challenge selector */}
@@ -168,44 +176,51 @@ export const HeroSection = () => {
             </div>
           </motion.div>
 
-          {/* CTAs */}
+          {/* CTAs - Softer primary CTA */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.5 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
+            className="flex flex-col items-center gap-4 mb-6"
           >
-            <Button 
-              size="lg" 
-              className="relative group gradient-primary text-white font-semibold px-10 py-7 text-lg rounded-2xl shadow-glow hover:shadow-glow-lg transition-all duration-500 overflow-hidden"
-              onClick={() => scrollToSection("pricing")}
-              onMouseEnter={() => setIsHovering(true)}
-              onMouseLeave={() => setIsHovering(false)}
-            >
-              {/* Animated shine effect */}
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                animate={{
-                  x: isHovering ? ["-100%", "100%"] : "-100%",
-                }}
-                transition={{ duration: 0.6 }}
-              />
-              <span className="relative z-10 flex items-center">
-                Book Your Free Call
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </span>
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="px-10 py-7 text-lg rounded-2xl border-border/50 bg-background/50 backdrop-blur-sm hover:bg-secondary/50 hover:border-primary/30 transition-all duration-500 group"
-              onClick={() => scrollToSection("program")}
-            >
-              <span className="flex items-center">
-                See How It Works
-                <ArrowRight className="ml-2 w-5 h-5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-              </span>
-            </Button>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button 
+                size="lg" 
+                className="relative group gradient-primary text-white font-semibold px-10 py-7 text-lg rounded-2xl shadow-glow hover:shadow-glow-lg transition-all duration-500 overflow-hidden"
+                onClick={() => scrollToSection("pricing")}
+                onMouseEnter={() => setIsHovering(true)}
+                onMouseLeave={() => setIsHovering(false)}
+              >
+                {/* Animated shine effect */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                  animate={{
+                    x: isHovering ? ["-100%", "100%"] : "-100%",
+                  }}
+                  transition={{ duration: 0.6 }}
+                />
+                <span className="relative z-10 flex items-center">
+                  See If This Is Right for You
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="px-10 py-7 text-lg rounded-2xl border-border/50 bg-background/50 backdrop-blur-sm hover:bg-secondary/50 hover:border-primary/30 transition-all duration-500 group"
+                onClick={() => scrollToSection("program")}
+              >
+                <span className="flex items-center">
+                  See How It Works
+                  <ArrowRight className="ml-2 w-5 h-5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                </span>
+              </Button>
+            </div>
+            
+            {/* Trust line below CTA */}
+            <p className="text-sm text-muted-foreground">
+              No pressure. If it's not a fit, I'll tell you.
+            </p>
           </motion.div>
 
           {/* Trust signals with animated counters */}
@@ -213,7 +228,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.7 }}
-            className="flex flex-wrap justify-center gap-8 md:gap-16"
+            className="flex flex-wrap justify-center gap-8 md:gap-16 mt-12"
           >
             {trustSignals.map((signal, index) => (
               <motion.div 
@@ -245,7 +260,7 @@ export const HeroSection = () => {
       >
         <motion.div 
           className="w-7 h-12 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-2 cursor-pointer hover:border-primary/50 transition-colors"
-          onClick={() => scrollToSection("problems")}
+          onClick={() => scrollToSection("problem")}
           whileHover={{ scale: 1.1 }}
         >
           <motion.div

@@ -69,7 +69,7 @@ export const MentorSection = () => {
             <span className="text-gradient">Alberto</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Not a guru. Not a course creator. Just a fellow founder who's been where you are
+            Not a guru. Not a course creator. A fellow founder who's been where you are
             and figured out how to break through.
           </p>
         </motion.div>
@@ -108,11 +108,15 @@ export const MentorSection = () => {
                     </div>
                   </div>
 
-                  <div className="glass rounded-lg p-4">
-                    <Quote className="w-5 h-5 text-primary mx-auto mb-2" />
-                    <p className="text-sm text-muted-foreground italic">
-                      "I don't believe in hustle culture. I believe in strategic, sustainable growth 
-                      that gives you back your time and freedom."
+                  {/* Belief Statement - Philosophy, not just bio */}
+                  <div className="glass rounded-lg p-5 text-left">
+                    <Quote className="w-5 h-5 text-primary mb-3" />
+                    <p className="text-sm text-foreground leading-relaxed mb-3">
+                      "I don't believe in hustle, hacks, or overcomplication."
+                    </p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      "I believe most businesses don't need more ideas—they need better decisions. 
+                      My job is to help you see clearly and act decisively."
                     </p>
                   </div>
                 </div>

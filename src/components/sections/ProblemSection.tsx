@@ -6,32 +6,32 @@ const painPoints = [
   {
     id: "burnout",
     icon: Clock,
-    title: "Working More, Earning Less",
-    shortDesc: "You're putting in 60+ hour weeks but your income hasn't grown in months.",
+    title: "I'm working harder than ever, but revenue feels capped.",
+    shortDesc: "60+ hour weeks with no growth in sight.",
     fullDesc: "The hustle mentality that got you started is now holding you back. You're trading time for money with no leverage in sight.",
     color: "text-red-400",
   },
   {
     id: "chaos",
     icon: AlertCircle,
-    title: "Constant Firefighting",
-    shortDesc: "Every day feels like putting out fires instead of building something sustainable.",
+    title: "My business depends too much on me.",
+    shortDesc: "Every day feels like putting out fires.",
     fullDesc: "Without systems in place, you're reactive instead of proactive. Growth feels impossible when you can barely keep up.",
     color: "text-orange-400",
   },
   {
     id: "clarity",
     icon: Brain,
-    title: "Strategic Confusion",
-    shortDesc: "Too many opportunities, no clear direction on which to pursue.",
+    title: "I don't know what to focus on next.",
+    shortDesc: "Too many ideas, no clear direction.",
     fullDesc: "Shiny object syndrome is real. You're spread thin across multiple ideas, never going deep enough on any of them.",
     color: "text-yellow-400",
   },
   {
     id: "ceiling",
     icon: TrendingDown,
-    title: "The Invisible Ceiling",
-    shortDesc: "You've hit a plateau and can't figure out what's blocking you.",
+    title: "I've hit an invisible ceiling I can't break through.",
+    shortDesc: "Stuck at the same revenue for months.",
     fullDesc: "You know you're capable of more, but something's holding you back. The ceiling isn't external—it's in your current approach.",
     color: "text-purple-400",
   },
@@ -60,18 +60,18 @@ export const ProblemSection = () => {
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-1 rounded-full glass text-sm text-primary mb-4">
-            The Reality
+            Sound Familiar?
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            Growing can feel{" "}
-            <span className="text-gradient">overwhelming</span>
+            You're not alone in feeling{" "}
+            <span className="text-gradient">stuck</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            If any of these sound familiar, you're not alone—and you're not stuck.
+            These aren't problems with you. They're problems with your current approach.
           </p>
         </motion.div>
 
-        {/* Pain Point Cards */}
+        {/* Pain Point Cards - First person statements */}
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-16">
           {painPoints.map((point, index) => (
             <motion.div
@@ -91,7 +91,7 @@ export const ProblemSection = () => {
                     <point.icon className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">{point.title}</h3>
+                    <h3 className="font-semibold text-lg mb-2 italic">"{point.title}"</h3>
                     <p className="text-muted-foreground text-sm">{point.shortDesc}</p>
                     
                     {expandedCard === point.id && (

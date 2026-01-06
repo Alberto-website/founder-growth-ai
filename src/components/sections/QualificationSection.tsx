@@ -3,18 +3,18 @@ import { motion } from "framer-motion";
 import { Check, X } from "lucide-react";
 
 const qualifiers = [
-  { id: "revenue", label: "You're earning €5K–€15K/month and want to grow", isFor: true },
-  { id: "solo", label: "You're a solo founder, freelancer, or small team", isFor: true },
-  { id: "stuck", label: "You feel stuck at a ceiling you can't break through", isFor: true },
-  { id: "committed", label: "You're ready to invest time and money in growth", isFor: true },
-  { id: "action", label: "You're willing to take action, not just learn", isFor: true },
+  { id: "revenue", label: "You're earning €5K–€15K/month and want to grow sustainably", isFor: true },
+  { id: "solo", label: "You're a solo founder, freelancer, or small team leader", isFor: true },
+  { id: "stuck", label: "You're seeking clarity and strategic direction", isFor: true },
+  { id: "committed", label: "You're ready to invest in yourself and your business", isFor: true },
+  { id: "action", label: "You're execution-ready, not just idea-curious", isFor: true },
 ];
 
 const disqualifiers = [
-  { id: "beginner", label: "You're just starting out with no revenue yet", isFor: false },
-  { id: "quick", label: "You're looking for a quick fix or magic bullet", isFor: false },
-  { id: "passive", label: "You want someone else to do the work for you", isFor: false },
-  { id: "employee", label: "You're employed and not running your own business", isFor: false },
+  { id: "beginner", label: "You're pre-revenue and still validating your idea", isFor: false },
+  { id: "quick", label: "You're looking for shortcuts or 'hacks' to get rich quick", isFor: false },
+  { id: "passive", label: "You want someone to do the work for you", isFor: false },
+  { id: "collector", label: "You collect courses but rarely implement", isFor: false },
 ];
 
 export const QualificationSection = () => {
@@ -50,14 +50,15 @@ export const QualificationSection = () => {
             <span className="text-gradient">good fit</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            This program isn't for everyone—and that's intentional. 
-            Here's how to know if it's right for you.
+            This sprint is intentionally not for everyone.
+            <br />
+            That's what makes it work for the right people.
           </p>
         </motion.div>
 
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8">
-            {/* This is for you */}
+            {/* This is for you - Clarity-seeking, execution-ready */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -95,7 +96,7 @@ export const QualificationSection = () => {
               </div>
             </motion.div>
 
-            {/* This is NOT for you */}
+            {/* This is NOT for you - Beginners, shortcut-seekers, course collectors */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -139,7 +140,7 @@ export const QualificationSection = () => {
               {isGoodFit ? (
                 <>
                   <h4 className="text-lg font-semibold text-emerald-400 mb-2">
-                    You look like a great fit! 🎯
+                    You look like a great fit.
                   </h4>
                   <p className="text-muted-foreground text-sm">
                     Based on your selections, Break the Ceiling could be exactly what you need. 
