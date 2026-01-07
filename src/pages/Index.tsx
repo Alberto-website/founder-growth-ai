@@ -11,6 +11,7 @@ import { PricingSection } from "@/components/sections/PricingSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { Chatbot } from "@/components/Chatbot";
+import { SocialButtons } from "@/components/SocialButtons";
 
 const Index = () => {
   return (
@@ -29,6 +30,7 @@ const Index = () => {
         <FAQSection />
       </main>
       <FooterSection />
+      <SocialButtons linkedinUrl="https://linkedin.com/in/alberto" />
       <Chatbot webhookUrl="https://joteh59565mucatecom.app.n8n.cloud/webhook/ffcf29b6-19e9-40fd-81a6-132910560043/chat" />
     </div>
   );
