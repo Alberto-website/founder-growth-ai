@@ -100,7 +100,7 @@ export const HeroSection = () => {
             Break Through Your
             <br />
             <span className="relative inline-block">
-              <span className="text-gradient-animated">Revenue Ceiling</span>
+              <span className="text-primary">Revenue Ceiling</span>
             </span>
           </motion.h1>
 
@@ -239,7 +239,7 @@ export const HeroSection = () => {
                 transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
                 whileHover={{ y: -5 }}
               >
-                <div className="text-3xl md:text-4xl font-display font-bold text-gradient mb-2">
+                <div className="text-3xl md:text-4xl font-display font-bold text-primary mb-2">
                   {signal.value}
                 </div>
                 <div className="text-sm text-muted-foreground font-medium">
