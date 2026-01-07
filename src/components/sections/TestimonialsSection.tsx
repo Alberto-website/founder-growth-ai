@@ -87,7 +87,7 @@ export const TestimonialsSection = () => {
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             Founders Who{" "}
-            <span className="text-gradient">Broke Through</span>
+            <span className="text-primary">Broke Through</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Real stories from entrepreneurs who went from stuck to scaling.

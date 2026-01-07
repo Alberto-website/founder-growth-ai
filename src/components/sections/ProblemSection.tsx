@@ -64,7 +64,7 @@ export const ProblemSection = () => {
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             You're not alone in feeling{" "}
-            <span className="text-gradient">stuck</span>
+            <span className="text-primary">stuck</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             These aren't problems with you. They're problems with your current approach.

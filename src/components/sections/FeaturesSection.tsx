@@ -64,7 +64,7 @@ export const FeaturesSection = () => {
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             Everything you need to{" "}
-            <span className="text-gradient">scale</span>
+            <span className="text-primary">scale</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             The Break the Ceiling sprint is designed to give you everything you need—nothing you don't.

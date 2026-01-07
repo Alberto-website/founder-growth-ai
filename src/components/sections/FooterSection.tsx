@@ -27,7 +27,7 @@ export const FooterSection = () => {
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
               Ready to{" "}
-              <span className="text-gradient">break your ceiling?</span>
+              <span className="text-primary">break your ceiling?</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
               Stop trading time for money. Stop hitting invisible walls. 
@@ -53,7 +53,7 @@ export const FooterSection = () => {
         <div className="container px-4 py-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-2">
-              <span className="text-xl font-bold text-gradient">Break the Ceiling</span>
+              <span className="text-xl font-bold text-primary">Break the Ceiling</span>
             </div>
             
             <nav className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
