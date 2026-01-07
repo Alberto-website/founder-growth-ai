@@ -66,7 +66,7 @@ export const MentorSection = () => {
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             Meet{" "}
-            <span className="text-gradient">Alberto</span>
+            <span className="text-primary">Alberto</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Not a guru. Not a course creator. A fellow founder who's been where you are

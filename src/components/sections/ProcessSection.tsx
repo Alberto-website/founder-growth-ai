@@ -40,7 +40,7 @@ export const ProcessSection = () => {
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             Three simple steps to{" "}
-            <span className="text-gradient">break through</span>
+            <span className="text-primary">break through</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Getting started is simple. Here's how we'll work together.

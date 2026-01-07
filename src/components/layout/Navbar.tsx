@@ -53,7 +53,7 @@ export const Navbar = () => {
                   <Sparkles className="w-5 h-5 text-white" />
                 </div>
               </div>
-              <span className="text-xl font-display font-bold text-gradient hidden sm:block">
+              <span className="text-xl font-display font-bold text-primary hidden sm:block">
                 Break the Ceiling
               </span>
             </a>
@@ -67,7 +67,7 @@ export const Navbar = () => {
                   className="relative px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors group"
                 >
                   {link.label}
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-brand-blue to-brand-purple group-hover:w-1/2 transition-all duration-300" />
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary group-hover:w-1/2 transition-all duration-300" />
                 </button>
               ))}
             </nav>

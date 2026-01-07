@@ -65,7 +65,7 @@ export const PricingSection = () => {
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             A sprint that{" "}
-            <span className="text-gradient">pays for itself</span>
+            <span className="text-primary">pays for itself</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             One focused investment to unlock sustainable, scalable growth.

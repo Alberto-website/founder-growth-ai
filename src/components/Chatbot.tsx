@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X, Send, Bot } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -24,9 +24,18 @@ export const Chatbot = ({ webhookUrl }: ChatbotProps) => {
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
   const sendMessage = async () => {
-    if (!input.trim()) return;
+    if (!input.trim() || isLoading) return;
 
     const userMessage: Message = {
       id: Date.now().toString(),
@@ -34,6 +43,7 @@ export const Chatbot = ({ webhookUrl }: ChatbotProps) => {
       isBot: false,
     };
 
+    const currentInput = input;
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
     setIsLoading(true);
@@ -42,14 +52,41 @@ export const Chatbot = ({ webhookUrl }: ChatbotProps) => {
       if (webhookUrl) {
         const response = await fetch(webhookUrl, {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ message: input }),
+          headers: { 
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ 
+            chatInput: currentInput,
+            sessionId: `session_${Date.now()}` 
+          }),
         });
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
         const data = await response.json();
+        
+        // Handle various n8n response formats
+        let botContent = "Thanks for your message! I'll get back to you soon.";
+        
+        if (typeof data === "string") {
+          botContent = data;
+        } else if (data.output) {
+          botContent = data.output;
+        } else if (data.response) {
+          botContent = data.response;
+        } else if (data.message) {
+          botContent = data.message;
+        } else if (data.text) {
+          botContent = data.text;
+        } else if (Array.isArray(data) && data.length > 0) {
+          botContent = data[0].output || data[0].response || data[0].message || data[0].text || botContent;
+        }
         
         const botMessage: Message = {
           id: (Date.now() + 1).toString(),
-          content: data.response || data.message || "Thanks for your message! I'll get back to you soon.",
+          content: botContent,
           isBot: true,
         };
         setMessages((prev) => [...prev, botMessage]);
@@ -63,6 +100,7 @@ export const Chatbot = ({ webhookUrl }: ChatbotProps) => {
         setMessages((prev) => [...prev, botMessage]);
       }
     } catch (error) {
+      console.error("Chatbot error:", error);
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
         content: "Sorry, I'm having trouble connecting right now. Please try again or book a call directly!",
@@ -134,7 +172,7 @@ export const Chatbot = ({ webhookUrl }: ChatbotProps) => {
                         : "gradient-primary text-white rounded-br-sm"
                     }`}
                   >
-                    <p className="text-sm">{message.content}</p>
+                    <p className="text-sm whitespace-pre-wrap">{message.content}</p>
                   </div>
                 </motion.div>
               ))}
@@ -149,6 +187,7 @@ export const Chatbot = ({ webhookUrl }: ChatbotProps) => {
                   </div>
                 </div>
               )}
+              <div ref={messagesEndRef} />
             </div>
 
             {/* Input */}
